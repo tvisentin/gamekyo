@@ -1,9 +1,77 @@
-.header {
-    background-color: #123456;
+.header-global {
+    background-color: white;
     width: 100%;
-    height: 10rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
+.header-main {
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-subbar {
+    background-color: #4394c0;
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-subbar text {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: white;
+}
+
+.header-subbar text:hover {
+    color: rgb(219, 219, 219);
+}
+
+.header-subbar input {
+    border: 0;
+    width: 20rem;
+    height: 100%;
+    background-color: #56afdf;
+    padding: 0px 8px;
+    font-size: 1.2rem;
+    color: white;
+    outline: none;
+
+}
+.header-subbar text:first-child {
+    margin-left: 4rem;
+}
+
+.header-subbar ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: white;
+    opacity: 0.7;
+  }
+
+/* Images */
+
 .header-logo {
-    width: 30rem;
+    width: 25rem;
+    margin-left: 2rem;
+}
+
+.header-login {
+    width: 3rem;
+    margin-right: 2rem;
+    cursor: pointer;
+}
+
+.header-search {
+    width: 2rem;
+    margin-right: -3rem;
+    cursor: pointer;
 }

@@ -1,29 +1,41 @@
-import React from 'react';
-import './App.css';
-import { Header } from "./header/header.js"
+import React from "react";
+import "./App.css";
+import { Header } from "./header/header.js";
+import Modal from "./modal/modal.js";
 
-function App() {
-  return (
-    <div>
-      <Header />
-    </div>
-    // <div className="App">
-    //   <header className="App-header">
-    //     <img src={logo} className="App-logo" alt="logo" />
-    //     <p>
-    //       Edit <code>src/App.js</code> and save to reload.
-    //     </p>
-    //     <a
-    //       className="App-link"
-    //       href="https://reactjs.org"
-    //       target="_blank"
-    //       rel="noopener noreferrer"
-    //     >
-    //       Learn React
-    //     </a>
-    //   </header>
-    // </div>
-  );
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.handleLogin = this.handleLogin.bind(this);
+    this.hideLogin = this.hideLogin.bind(this);
+
+    this.state = {
+      logginModalDisplayed: false
+    };
+  }
+
+  handleLogin(click) {
+    this.setState({
+      logginModalDisplayed: click
+    });
+  }
+
+  hideLogin() {
+    this.setState({
+      logginModalDisplayed: false
+    });
+  }
+
+  render() {
+    return (
+      <div>
+        {this.state.logginModalDisplayed === true ? <Modal onCancelSelected={this.hideLogin}/> : null}
+
+        <Header onLogginSelected={this.handleLogin} />
+      </div>
+    );
+  }
 }
 
 export default App;
